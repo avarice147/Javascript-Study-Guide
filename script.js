@@ -221,4 +221,305 @@
 
 
 
+// JAVASCRIPT ARRAYS = group variables listed to keep code DRY
+
+//write printReverse() function that takes array as an argument & prints out elemts in array in reverse order
+//note: dont reverse the array itself.
+
+//for NUMBERS 4-1
+
+// function printReverse(arr) {
+// 	for(var i = arr.length - 1; i >= 0; i--) {
+// 		console.log(arr[i]);
+// 	}
+// }
+// printReverse([1,2,3,4]);
+//output is //4 //3 //2 //1
+
+//FOR LETTERS D-A
+
+
+// function printReverse(arr) {
+// 	for(var i = arr.length - 1; i >= 0; i--) {
+// 		console.log(arr[i]);
+// 	}
+// }
+
+// printReverse(["a","b","c","d"]);
+//output is //d //c //b //a
+
+
+//write isUniform() function which takes an array as an argument and returns true if all elements in array are identical
+//e.x. isUniform([1,1,1]);  //true
+
+
+// function isUniform(arr) {
+// 	//get first item
+// 	var firstItem = arr[0];
+// 	//loop going thru each item
+// 	for(var i = 0; i <= arr.length - 1; i++) {
+// 	// checking to see IF they are equal to firstItem
+// 		if(firstItem !== arr[i]) {
+// 			return false;
+// 		} 
+// 	}	return true;
+// } 
+
+// isUniform([1,2,1,1]); //false
+
+
+//write sumArray() function that accepts array of numbers and returns the sum of all numbers in array
+//e.x. sumArray([1,2,3]); //6
+
+//FOR LOOP
+// function sumArray(arr) {
+// 	var sum = 0;
+// 	for(var i = 0; i <= arr.length - 1; i++) {
+// 	sum = sum + arr[i];
+// 	}
+// return sum;
+// }
+
+// sumArray([1,3,3]); output //7
+
+//FOR EACH
+// function sumArray(arr) {
+// 	var sum = 0;
+// 	arr.forEach(function(element) {
+// 	sum += element;
+// 	});
+// return sum;
+// }
+
+// sumArray([1,3,3]); output //7
+
+
+//write max() function that accepts an array of numbers and returns the maximum number in the array
+//e.x. max([1,2,3]); output //3
+
+// FOR LOOP
+// function max(arr) {
+// 	var max = arr[0]; //use 1st index as MAX
+// 	for(var i = 0; i < arr.length; i++) { //run thru loop
+// 		if (arr[i] > max) { //if any index is greater than 1st index
+// 			max = arr[i]; // max-index becomes max 
+// 		}
+// 	}
+// 	return max; //show max
+// }
+
+// max([1,2,3,4,5]);
+
+
+//movieDatabase
+//create and array of movie objects. Each movie should have a title, rating, and haswatched boolean properties. Iterate through the array and print out something looks like (run code below)
+
+//FOR EACH method
+// var movies = [
+// 		{
+// 			title: "Matrix",
+// 			rating: "4 Stars",
+// 			hasWatched: true
+// 		},
+
+// 		{
+// 			title: "Inception",
+// 			rating: "4 Stars",
+// 			hasWatched: true
+// 		},
+
+// 		{
+// 			title: "V for Vendetta",
+// 			rating: "5 Stars",
+// 			hasWatched: true
+// 		},
+
+// 		{
+// 			title: "American Pie",
+// 			rating: "1 Stars",
+// 			hasWatched: false
+// 		}
+// ]
+
+// movies.forEach(function(movie) { //loop
+// 	if(movie.hasWatched){
+// 	console.log("you have watched " + "\"" + movie.title + "\"" + " - " + movie.rating);	
+// 	} else {
+// 	console.log("you have not seen " + "\"" + movie.title + "\"" + " - " + movie.rating);
+// 	}
+
+// });
+
+//OR ANOTHER way FOR EACH method
+
+// var movies = [
+// 		{
+// 			title: "Matrix",
+// 			rating: "4 Stars",
+// 			hasWatched: true
+// 		},
+
+// 		{
+// 			title: "Inception",
+// 			rating: "4 Stars",
+// 			hasWatched: true
+// 		},
+
+// 		{
+// 			title: "V for Vendetta",
+// 			rating: "5 Stars",
+// 			hasWatched: true
+// 		},
+
+// 		{
+// 			title: "American Pie",
+// 			rating: "1 Stars",
+// 			hasWatched: false
+// 		}
+// ]
+
+// movies.forEach(function(movie) { //loop
+// 	var result = "you have watched ";
+// 	var result2 = "you have not watched ";
+// 	if(movie.hasWatched){
+// 	result = result + "\"" + movie.title + "\"" + " - " + movie.rating;
+// 		console.log(result);	
+// 	} else {
+// 	result2 = result2 + "\"" + movie.title + "\"" + " - " + movie.rating;
+// 		console.log(result2);
+// 	}
+
+// });
+
+
+//ANOTHER WAY AND MORE EFFICIENT WAY FOR EACH method
+
+// var movies = [
+// 		{
+// 			title: "Matrix",
+// 			rating: "4 Stars",
+// 			hasWatched: true
+// 		},
+
+// 		{
+// 			title: "Inception",
+// 			rating: "4 Stars",
+// 			hasWatched: true
+// 		},
+
+// 		{
+// 			title: "V for Vendetta",
+// 			rating: "5 Stars",
+// 			hasWatched: true
+// 		},
+
+// 		{
+// 			title: "American Pie",
+// 			rating: "1 Stars",
+// 			hasWatched: false
+// 		}
+// ]
+
+// movies.forEach(function(movie) { //loop
+// 	var result = "you have "; // <--- copy and past form here to ...
+// 		if(movie.hasWatched){
+// 		result += "watched ";		
+// 		} else {
+// 		result += "not watched ";
+// 		}
+// 			result += "\"" + movie.title + "\"" + " - " + movie.rating; // <------ ... to here to make a new function
+// 			console.log(result);
+
+// });
+
+
+// //after writing out this efficient way lets make a  make a fucntion to clean it up
+
+// function buildString(movie) {
+// 	var result = "you have "; 
+// 		if(movie.hasWatched){
+// 		result += "watched ";		
+// 		} else {
+// 		result += "not watched ";
+// 		}
+// 			result += "\"" + movie.title + "\"" + " - " + movie.rating;
+// 			return result;
+// }
+
+// //then have to change movies.forEach by adding function into method and print out by using console.log(function name);.
+
+// movies.forEach(function(movie) {
+// 	console.log(buildString(movie));
+// });
+
+
+
+// //FOR LOOP 
+
+// var movies = [
+// 		{
+// 			title: "Matrix",
+// 			rating: "4 Stars",
+// 			hasWatched: true
+// 		},
+
+// 		{
+// 			title: "Inception",
+// 			rating: "4 Stars",
+// 			hasWatched: true
+// 		},
+
+// 		{
+// 			title: "V for Vendetta",
+// 			rating: "5 Stars",
+// 			hasWatched: true
+// 		},
+
+// 		{
+// 			title: "American Pie",
+// 			rating: "1 Stars",
+// 			hasWatched: false
+// 		}
+// ]
+
+// // for(var i = 0; i < movies.length; i++) { //build for loop and if statement
+// // 	var result = "you have ";
+// // 	if(movies[i].hasWatched) {
+// // 	result += "watched ";
+// // 	} else {
+// // 	result += "not watched ";
+// // 	}
+// // 		result += "\"" + movies[i].title + "\"" + " - " + movies[i].rating;
+// // 		console.log(result);
+// // }
+
+// function buildString(movie) {  //make function to clean it up
+// 	var result = "you have ";
+// 	if(movies[i].hasWatched) {
+// 	result += "watched ";
+// 	} else {
+// 	result += "not watched ";
+// 	}
+// 	result += "\"" + movies[i].title + "\"" + " - " + movies[i].rating;
+// 	return result;
+// }
+
+
+// for(var i = 0; i < movies.length; i++) { //final product inserting function into for loop
+// 	console.log(buildString());
+// };
+
+
+
+//JS METHODS
+
+
+
+
+
+
+
+
+
+
 

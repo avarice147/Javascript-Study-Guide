@@ -511,7 +511,199 @@
 
 
 
-//JS METHODS
+//JS METHODS - is functions in a object as a property.
+
+// var ob = {
+// 	name: "chuck",
+// 	age: 3,
+// 	isCool: true,
+// 	friends: ["bob", "tina"],
+// 	add: function(x, y) { <--- added js method
+// 		return x + y;
+// 	}
+
+// }
+//use to call object like..
+//ob
+
+//to call add now ....
+
+//obj.add(10,5);
+
+
+ //DIFFERENT TYPES OF OBJECTS
+
+
+ //OBJECT LITERAL E.X.
+
+//  var person = {
+//  	firstName: "Michael",
+//  	lastName: "Gabucan",
+//  	age: 31,
+//  	hisFriends: ["josh", "jon", "cesar"],
+//  	address: {
+//  		street: "14218 econ woods lane",
+//  		city: "orlando",
+//  		state: "FL"
+//  	},
+//  	fullName: function() {
+//  		return this.firstName + " " + this.lastName;
+//  	}
+
+//  };
+
+// console.log(person.fullName());
+
+
+//OBJECT CONSTRUCTOR E.X.
+
+// var apple = new Object();
+// apple.color = "red";
+// apple.shape = "round";
+
+// apple.describe = function() {
+// 	return "An apple is the color " + this.color + " and the shape " + this.shape;
+// }
+
+
+// console.log(apple.describe());
+
+//if you had more fruits ... theres is more effiecent way using CONSTRUCTOR PATTERN
+
+//CONSTRUCTOR PATTERN
+
+// function fruit(name, color, shape) {
+// 	this.name = name;
+// 	this.color = color;
+// 	this.shape = shape;
+
+// 	this.describe = function() {
+// 		return "This " + this.name + " has a color of " + this.color + " and a shape of " + this.shape;
+// 	}
+// }
+
+
+// var apple = new fruit("apple", "red", "round");
+// var banana = new fruit("banana", "yellow", "long");
+
+
+// console.log(apple); //access entire object of apple
+// console.log(apple.name); //access property to get value of name of apple
+// console.log(apple.describe()); //call the method 
+
+
+//DOM
+
+//5 types of methods selecting elements
+// document.getElementById();
+// document.getElementByClassName();
+// document.getElementByTagName();
+// document.querySelector();
+// document.querySelectorAll();
+
+
+// var tag = document.getElementById("tag");
+// var tags = document.getElementByClassName("tags")[0];
+// console.log(tags[0]);
+// var tags = document.getElementByTagName("tags");
+// console.log(tags[0]);
+// var tag = document.querySelector("#highlight");//gives only first selected element
+// var tag = document.querySelectorAll(".bolded")[0];//gives all elements bolded
+
+//a more DRY code alternative is using classes E.X.
+// var tag = document.getElementbyId("highlight");
+// tag.style.color = "blue";
+// tag.style.border = "1px solid red";
+// // heres show it should be written using classes...
+
+// .some-class { //define a class in CSS
+// 	color: blue;
+// 	border: 1px solid red;
+// }
+
+// var tag = document.getElementbyId("highlight");
+// tag.classList.add("some-class");//add new class to selected element
+
+//tag.classList.remove("some-class"); //remove a class
+//tag.classList.toggle("some-class"); // toggle a class
+
+// textContent (EVERYTHING inside a text is gone except text itself be careful)
+
+// var tag = document.querySelector("p");
+
+// //retrieve the textContent from "p" aka paragraph in html
+// tag.textContent // This is an awsome paragraph
+// //alter the textContent
+// tag.textContent = "blah blah blah blah";
+
+//innerHTML (same as textConent except keeps all HTML in element)
+//e.x.
+//<p>Hello there <strong>world</strong>!!!</p>
+
+// //select p tag
+// var tag = document.querySelector("p");
+
+// //manipulate
+// tag.innerHTML
+// //"Hello there <strong>world</strong>!!!"
+
+
+//attributes (href or src)
+//e.x. 
+//<a href="www.google.com">I am a link</a>
+//<img src ="logo.png">
+
+//var link = document.querySelector("a");
+//link.getAttrubute("href");  //which is www.google.com @ the moment
+//TO CHANGE ATTRIBUTE
+//link.setAttribute("href", "www.dogs.com");  output is now //<a href="www.dogs.com">I am a link</a>
+
+//TO CHANGE SRC
+//var img = document.querySelector("img");
+//img.setAttribute("src", "corgi.png"); //out put it now corgi.png for src
+
+
+//DOM EVENTS
+
+// <button>Click me!</button>
+// <p>No one has clicked me</p>
+
+// //SELECT element
+
+// var btn = document.querySelector("button");
+// var p = document.querySelector("p");
+
+// //ADD event listener
+
+// btn.addEventListener("click", function() {    
+// 	p.textContent = "You have clicked me!";			<--- note: u can add more 
+// });
+
+//ANOTHER EXAMPLE:
+
+// <ul>
+// 	<li>hello</li>
+// 	<li>hello</li>
+// 	<li>hello</li>
+// </ul>
+
+// var lis = document.querySelectorAll("li");
+
+// for(var i = 0; i < lis.length; i++) {
+// 	lis[i].addEventListener("click", function() {
+// 		this.style.color = "orange";
+// 	});
+// }
+
+// OR
+
+// for(var i = 0; i < lis.length; i++) {
+// 	lis[i].addEventListener("click", changeLis);
+
+// function changeLis() {
+// 	this.style.color = "orange";
+// };
+
 
 
 
